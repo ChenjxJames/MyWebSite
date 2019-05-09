@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d9587327-ca3d-46f9-81d3-6a89206b2d3e" name="Default" comment="error-code">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/myCloud/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="912">
+              <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyWebSite/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="75" selection-start-line="75" selection-end-line="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myUsers/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2869">
+              <caret line="155" selection-start-line="155" selection-end-line="155" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>#delFile</find>
+      <find>file_path</find>
+      <find>strMD5</find>
+      <find>path</find>
+      <find>opt_file</find>
+      <find>downloadFile</find>
+      <find>set_name</find>
+      <find>setName</find>
+      <find>moveFile</find>
+      <find>getInfoModal</find>
+      <find>getInfo</find>
+      <find>uploadFile</find>
+      <find>keyword</find>
+      <find>opt_file_id_list</find>
+      <find>filename</find>
+      <find>alert(&quot;test</find>
+      <find>down</find>
+      <find>退出</find>
+      <find>toVaild</find>
+      <find>login_ajax</find>
+      <find>submit_verify</find>
+      <find>change_password_ajax</find>
+      <find>setFileName</find>
+      <find>id=&quot;username&quot;</find>
+      <find>delFile</find>
+      <find>user-font</find>
+      <find>getUserInfo</find>
+      <find>position</find>
+      <find>eac</find>
+      <find>each</find>
+    </findStrings>
+    <dirStrings>
+      <dir>D:\MyWebSite\MyWebSite\upload</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/blog/urls.py" />
+        <option value="$PROJECT_DIR$/cloud/views.py" />
+        <option value="$PROJECT_DIR$/cloud/urls.py" />
+        <option value="$PROJECT_DIR$/cloud/models.py" />
+        <option value="$PROJECT_DIR$/myBlog/models.py" />
+        <option value="$PROJECT_DIR$/MyWebSite/__init__.py" />
+        <option value="$PROJECT_DIR$/myBlog/urls.py" />
+        <option value="$PROJECT_DIR$/myBlog/__init__.py" />
+        <option value="$PROJECT_DIR$/myCloud/__init__.py" />
+        <option value="$PROJECT_DIR$/static/js/jquery.ajax.csrf.js" />
+        <option value="$PROJECT_DIR$/myUsers/__init__.py" />
+        <option value="$PROJECT_DIR$/templates/myUsers/about.html" />
+        <option value="D:/Tools/html/ajax.html" />
+        <option value="$PROJECT_DIR$/MyWebSite/urls.py" />
+        <option value="$PROJECT_DIR$/templates/myCloud/about.html" />
+        <option value="$PROJECT_DIR$/myUsers/models.py" />
+        <option value="$PROJECT_DIR$/myUsers/migrations/0010_auto_20181224_1636.py" />
+        <option value="$USER_HOME$/Desktop/新建文件夹/myUsers/register.html" />
+        <option value="$USER_HOME$/Desktop/新建文件夹/myUsers/login.html" />
+        <option value="$PROJECT_DIR$/myCloud/migrations/0001_initial.py" />
+        <option value="$PROJECT_DIR$/static/js/cloud.html" />
+        <option value="$PROJECT_DIR$/myBlog/views.py" />
+        <option value="$PROJECT_DIR$/templates/myBlog/index.html" />
+        <option value="$PROJECT_DIR$/base/MD5.py" />
+        <option value="$PROJECT_DIR$/myCloud/urls.py" />
+        <option value="$PROJECT_DIR$/templates/myUsers/login.html" />
+        <option value="$PROJECT_DIR$/templates/myUsers/change_password.html" />
+        <option value="$PROJECT_DIR$/myUsers/urls.py" />
+        <option value="$PROJECT_DIR$/static/js/cloud.js" />
+        <option value="$PROJECT_DIR$/static/css/cloud.css" />
+        <option value="$PROJECT_DIR$/templates/myCloud/index.html" />
+        <option value="$PROJECT_DIR$/templates/myUsers/register.html" />
+        <option value="$PROJECT_DIR$/package.txt" />
+        <option value="$PROJECT_DIR$/README.txt" />
+        <option value="$PROJECT_DIR$/myCloud/models.py" />
+        <option value="$PROJECT_DIR$/myUsers/views.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/myCloud/views.py" />
+        <option value="$PROJECT_DIR$/MyWebSite/settings.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="948" />
+    <option name="width" value="981" />
+    <option name="height" value="1032" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MyWebSite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyWebSite" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyWebSite\MyWebSite\templates\myCloud" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyWebSite\MyWebSite\base" />
+      <recent name="D:\MyWebSite\MyWebSite\static\js" />
+      <recent name="D:\MyWebSite\MyWebSite\templates\myUsers" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="MyWebSite" type="Python.DjangoServer" factoryName="Django server">
+      <module name="MyWebSite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="MyWebSite.settings" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Python\python3.5.2\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9587327-ca3d-46f9-81d3-6a89206b2d3e" name="Default" comment="" />
+      <created>1542247060924</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542247060924</updated>
+      <workItem from="1547645631220" duration="6358000" />
+      <workItem from="1547714870092" duration="11400000" />
+      <workItem from="1547734464151" duration="2266000" />
+      <workItem from="1548212522264" duration="3069000" />
+      <workItem from="1548253699677" duration="3000" />
+      <workItem from="1548326551450" duration="11928000" />
+      <workItem from="1548383835796" duration="14064000" />
+      <workItem from="1548472308478" duration="11073000" />
+      <workItem from="1550317011838" duration="5000" />
+      <workItem from="1550395251644" duration="592000" />
+      <workItem from="1550466826795" duration="886000" />
+      <workItem from="1550572987046" duration="593000" />
+      <workItem from="1550651936477" duration="7687000" />
+      <workItem from="1550928836063" duration="677000" />
+      <workItem from="1550930188643" duration="4702000" />
+      <workItem from="1551969012129" duration="740000" />
+      <workItem from="1552026012151" duration="288000" />
+      <workItem from="1553128590338" duration="1529000" />
+      <workItem from="1553243484356" duration="1080000" />
+      <workItem from="1553437623116" duration="1812000" />
+      <workItem from="1553525589604" duration="738000" />
+      <workItem from="1553587005154" duration="16000" />
+      <workItem from="1554002704810" duration="39000" />
+      <workItem from="1554008586321" duration="5273000" />
+      <workItem from="1554119644475" duration="1358000" />
+      <workItem from="1554203517505" duration="486000" />
+      <workItem from="1554714259446" duration="5000" />
+      <workItem from="1554717269571" duration="3283000" />
+      <workItem from="1554806892046" duration="1361000" />
+      <workItem from="1554906737120" duration="259000" />
+      <workItem from="1555740218050" duration="99000" />
+      <workItem from="1555750905489" duration="1429000" />
+      <workItem from="1555757374887" duration="622000" />
+      <workItem from="1555759044494" duration="270000" />
+      <workItem from="1555832956408" duration="208000" />
+      <workItem from="1555834506727" duration="110000" />
+      <workItem from="1556706782004" duration="3413000" />
+      <workItem from="1556858875855" duration="1672000" />
+      <workItem from="1556981091876" duration="412000" />
+      <workItem from="1557043069008" duration="589000" />
+      <workItem from="1557231657666" duration="14000" />
+      <workItem from="1557386263475" duration="3250000" />
+      <workItem from="1557389550387" duration="7111000" />
+    </task>
+    <task id="LOCAL-00001" summary="None">
+      <created>1557404954780</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557404954781</updated>
+    </task>
+    <task id="LOCAL-00002" summary="error-code">
+      <created>1557408256794</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1557408256794</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="112769000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15602264" />
+      <window_info id="Structure" order="1" weight="0.19725141" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3297619" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49555376" weight="0.2429078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3280142" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3285968" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49717057" visible="true" weight="0.38898757" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.3285968" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50282943" side_tool="true" visible="true" weight="0.38898757" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Thumbnails" order="13" weight="0.32978722" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Data View" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32983023" />
+      <window_info anchor="right" id="SciView" order="5" weight="0.32983023" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25949878" />
+      <window_info id="Structure" order="1" weight="0.19725141" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3297619" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49636218" weight="0.35283688" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3280142" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.39007092" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.3297619" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50363785" side_tool="true" weight="0.3386525" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Thumbnails" order="13" weight="0.32978722" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Data View" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32983023" />
+      <window_info anchor="right" id="SciView" order="5" weight="0.32983023" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="None" />
+    <MESSAGE value="error-code" />
+    <option name="LAST_COMMIT_MESSAGE" value="error-code" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/myUsers/migrations/0010_auto_20181224_1636.py" />
+    <entry file="file://$PROJECT_DIR$/myUsers/migrations/0009_auto_20181224_1634.py" />
+    <entry file="file://$PROJECT_DIR$/myUsers/migrations/0011_remove_registerkeyinfo_id.py" />
+    <entry file="file://$PROJECT_DIR$/myUsers/migrations/0008_auto_20181217_1604.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-182" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myUsers/migrations/0009_auto_20181224_1637.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34" />
+      </provider>
+    </entry>
+    <entry file="file://D:/Python/python3.5.2/Lib/site-packages/django/db/models/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1729">
+          <caret line="639" column="8" selection-start-line="639" selection-start-column="8" selection-end-line="639" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/新建文件夹/myUsers/register.html" />
+    <entry file="file://$USER_HOME$/Desktop/新建文件夹/myUsers/login.html" />
+    <entry file="file://D:/Python/python3.5.2/Lib/site-packages/django/utils/autoreload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="224" selection-start-line="224" selection-end-line="224" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python/python3.5.2/Lib/site-packages/django/core/management/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-293">
+          <caret line="424" selection-start-line="424" selection-end-line="424" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/migrations/0011_auto_20190116_2352.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/migrations/0010_auto_20181224_2300.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/migrations/0009_auto_20181224_2256.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/migrations/0008_auto_20181224_2248.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/migrations/0007_auto_20181224_2205.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/migrations/0006_auto_20181224_1847.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-131" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/migrations/0005_auto_20181217_1544.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/migrations/0004_auto_20181120_0904.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/migrations/0003_auto_20181120_0901.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/migrations/0002_fileinfo_ffile.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/cloud.html" />
+    <entry file="file://D:/Python/python3.5.2/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/myBlog/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/myCloud/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/myUsers/change_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="73" column="71" selection-start-line="73" selection-start-column="71" selection-end-line="73" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myUsers/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/Python/python3.5.2/Lib/site-packages/django/core/handlers/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="108" column="24" lean-forward="true" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python/python3.5.2/Lib/email/message.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="470" column="33" lean-forward="true" selection-start-line="470" selection-start-column="33" selection-end-line="470" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyWebSite/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/cloud.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/myUsers/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="81" column="21" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/myCloud/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="133" column="10" lean-forward="true" selection-start-line="133" selection-start-column="10" selection-end-line="133" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/myUsers/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/cloud.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="210" column="9" selection-start-line="210" selection-start-column="9" selection-end-line="210" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myUsers/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base/MD5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myUsers/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myBlog/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myBlog/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myBlog/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyWebSite/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myUsers/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2869">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="456">
+            <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" selection-start-line="21" selection-end-line="21" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyWebSite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload/icon/2018112000.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/error-code.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myCloud/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

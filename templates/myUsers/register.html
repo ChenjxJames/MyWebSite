@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/jquery.md5.js"></script>
+    <script src="/static/js/jquery.ajax.csrf.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btnSubmit").click(function () {
+                if(isVaild()){
+                    $.ajax({
+                        url: "/user/register",
+                        data: {
+                            registerkey:$("#registerkey").val(),
+                            username: $("#username").val(),
+                            password: $.md5($("#password").val()),
+                            name: $("#name").val(),
+                            email: $("#email").val()
+                        },
+                        type: "post",
+                        dataType: "json",
+                        async: true,
+                        success: function (data) {
+                            if (data.state === '0'){
+                                //注册成功后跳转至登录页面
+                                alert(data.info);
+                                window.location.pathname  = "/user/login";
+                            }else {
+                                alert(data.info+'   ['+data.state+']');
+                            }
+                        },
+                        error: function () {
+                            alert("ajax error")
+                        }
+                    });
+                }
+            });
+
+            function isVaild() {
+                if ($("#username").val().trim().length === 0) {
+                    $("#username").focus();
+                    alert("请设置用户名！");
+                    return false;
+                }
+                if ($("#password").val().trim().length === 0) {
+                    $("#password").focus();
+                    alert("请设置密码！");
+                    return false;
+                }
+                if ($("#password").val().length != $("#password").val().trim().length) {
+                    $("#password").focus();
+                    alert("密码不能含有空格！");
+                    return false;
+                }
+                if ($("#repassword").val().trim().length === 0) {
+                    $("#repassword").focus();
+                    alert("请确认密码！");
+                    return false;
+                }
+                if ($("#password").val() != $("#repassword").val()) {
+                    $("#repassword").focus();
+                    alert("两次密码输入不一致！");
+                    return false;
+                }
+                if ($("#name").val().trim().length === 0) {
+                    $("#name").focus();
+                    alert("请输入您的姓名！");
+                    return false;
+                }
+                if ($("#email").val().trim().length === 0) {
+                    $("#email").focus();
+                    alert("请输入您的邮箱！");
+                    return false;
+                }
+                return true;
+            }
+        });
+    </script>
+    <title>注册</title>
+</head>
+<body>
+
+<div class="jumbotron">
+    <h2 class="text-center">注册</h2>
+</div>
+<br/>
+<form action="" method="post"
+      class="col-xs-10 col-sm-6 col-md-4 col-lg-4 col-xs-offset-2 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+    <div class="input-group">
+        <span class="input-group-addon">邀请码</span>
+        <input type="text" maxlength="32" class="form-control" placeholder="RegisterKey" id="registerkey"/>
+    </div>
+    <br/>
+
+    <div class="input-group">
+        <span class="input-group-addon">用户名</span>
+        <input type="text" maxlength="10" class="form-control" placeholder="Username" id="username"/>
+    </div>
+    <br/>
+
+    <div class="input-group">
+        <span class="input-group-addon">密码</span>
+        <input type="password" maxlength="255" class="form-control" placeholder="Password" name="password" id="password"/>
+    </div>
+    <br/>
+
+    <div class="input-group">
+        <span class="input-group-addon">确认密码</span>
+        <input type="password" maxlength="255" class="form-control" placeholder="Password" name="repassword" id="repassword"/>
+    </div>
+    <br/>
+
+    <div class="input-group">
+        <span class="input-group-addon">姓名</span>
+        <input type="text" maxlength="32" class="form-control" placeholder="Name" name="name" id="name"/>
+    </div>
+    <br/>
+
+    <div class="input-group">
+        <span class="input-group-addon">邮箱</span>
+        <input type="email" maxlength="255" class="form-control" placeholder="Email" name="email" id="email"/>
+    </div>
+    <br/>
+    <br/>
+    <button type="button" class="btn btn-success btn-lg center-block" id="btnSubmit">注册</button>
+    <br />
+</form>
+</body>
+</html>

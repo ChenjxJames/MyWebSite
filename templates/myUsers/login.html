@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/jquery.md5.js"></script>
+    <script src="/static/js/jquery.ajax.csrf.js"></script>
+    <title>登录</title>
+    <script>
+        $(document).ready(function () {
+            $("#btnSubmit").click(function () {
+                if (isVerify()) {
+                    loginAjax();
+                }
+            });
+
+            $("form").keydown(function (event) {
+                if (event.which === 13 && isVerify()) {
+                    loginAjax();
+                }
+            });
+
+            function isVerify() {
+                if ($("#username").val().trim().length === 0) {
+                    $("#username").focus();
+                    alert("输入用户名！");
+                    return false;
+                }
+                if ($("#password").val().trim().length === 0) {
+                    $("#password").focus();
+                    alert("请输入密码！");
+                    return false;
+                }
+                if ($("#password").val().length != $("#password").val().trim().length) {
+                    $("#password").focus();
+                    alert("密码不能含有空格！");
+                    return false;
+                }
+                return true;
+            }
+
+            function loginAjax() {
+                $.ajax(
+                    {
+                        url: "/user/login",
+                        data: {
+                            username: $("#username").val(),
+                            password: $.md5($("#password").val()),
+                            keeplogin: $("[name='keeplogin']:checked").val()
+                        },
+                        type: "post",
+                        dataType: "json",
+                        async: true,
+                        success: function (data) {
+                            if (data.state === '0') {
+                                if (window.location.pathname === "/user/login/") {
+                                    window.location.pathname = '/';
+                                } else {
+                                    window.location.reload();
+                                }
+                            } else {
+                                alert(data.info + '   [' + data.state + ']');
+                            }
+                        },
+                        error: function () {
+                            alert("ajax error")
+                        }
+                    });
+            }
+        });
+    </script>
+</head>
+<body>
+<div class="jumbotron">
+    <h2 class="text-center">登录</h2>
+</div>
+<br/>
+<form action="" method="post"
+      class="col-xs-10 col-sm-6 col-md-4 col-lg-4 col-xs-offset-2 col-sm-offset-4 col-md-offset-4 col-lg-offset-4">
+    <div class="input-group">
+        <span class="input-group-addon">用户名</span>
+        <input type="text" maxlength="10" class="form-control"  placeholder="Username" name="username" id="username"/>
+    </div>
+
+    <br/>
+    <div class="input-group">
+        <span class="input-group-addon">密码</span>
+        <input type="password" maxlength="255" class="form-control" placeholder="Password" name="password" id="password"/>
+    </div>
+    <br/>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="True" name="keeplogin"/>保持登陆
+        </label>
+    </div>
+    <br/>
+    <button type="button" class="btn btn-success btn-lg center-block" id="btnSubmit">登陆</button>
+    <br/>
+</form>
+</body>
+</html>

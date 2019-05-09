@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/cloud.css">
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/cloud.js"></script>
+    <title>我的云盘</title>
+</head>
+<body>
+<div class="loading-modal" style="" id="loading">
+    <div class="loading" id="loadingGif">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+
+
+<div class="col-xs-12 col-sm-3 col-md-3 col-lg-2" id="main_left">
+    <div id="main_left_inner">
+        <div class="cloud-logo">
+            <br>
+            <h2 class="text-center">MyCloud</h2><br>
+        </div>
+        <div class="form-group" style="padding-left: 15px;padding-right: 15px;">
+            <input class="form-control" type="text" placeholder="搜索" maxlength="64" id="keyword"><br>
+        </div>
+        <div class="menu menu-opt" id="all_file"><h4 class="text-center">全部文件</h4></div>
+        <div class="menu" id="my_share"><h4 class="text-center">我的分享</h4></div>
+        <div class="line"></div>
+        <div class="menu" id="about"><h4 class="text-center">关于MyCloud</h4></div>
+        <br>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-9 col-md-9 col-lg-10" id="main_right">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="display: inline;"
+         id="main_right_file_nav">
+        <div id="file_nav">
+            <div class="file-nav-left">
+                <button class="btn btn-default" type="button" id="btnUpload">
+                    <sapn class="fa fa-cloud-upload" style="color: #2980ff;"></sapn>
+                    上传
+                </button>
+                <button class="btn btn-default" type="button" id="btnNewFile">
+                    <sapn class="fa fa-plus" style="color: #2980ff;"></sapn>
+                    新建
+                </button>
+                <div style="display: none;" id="optBtns">
+                    <button class="btn btn-default" type="button" id="btnDownload">
+                        <sapn class="fa fa-download" style="color: #2980ff;"></sapn>
+                        下载
+                    </button>
+                    <div class="dropdown" style="display: inline;">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="operationMenu"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            更多操作
+                            <span class="caret"></span>
+                        </button>
+
+                        <ul class="dropdown-menu" aria-labelledby="operationMenu">
+                            <li><a id="other_menu_set_name">
+                                <sapn class="fa fa-keyboard-o" style="color: #2980ff;padding-right: 5px;"></sapn>
+                                重命名</a></li>
+                            <li><a id="other_menu_move_file">
+                                <sapn class="fa fa-cut" style="color: #2980ff;padding-right: 6px;"></sapn>
+                                移动</a></li>
+                            <li><a id="other_menu_del_file">
+                                <sapn class="fa fa-remove" style="color: #2980ff;padding-right: 9px;"></sapn>
+                                删除</a></li>
+                            <li><a id="other_menu_get_info">
+                                <sapn class="fa fa-navicon" style="color: #2980ff;padding-right: 8px;"></sapn>
+                                详情</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a id="other_menu_share_file">
+                                <sapn class="fa fa-share-alt" style="color: #2980ff;padding-right: 8px;"></sapn>
+                                分享</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn btn-default" style="display: none;" type="button" id="btnPaste">
+                    <sapn class="fa fa-paste" style="color: #2980ff;"></sapn>
+                    粘贴
+                </button>
+            </div>
+            <div class="file-nav-right">
+                <div class="dropdown" style="display: inline;">
+                    <button class="btn-user" type="button" id="userMenu"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <div class="user-font"><span class="fa fa-user"></span></div>
+                        <p style="display: inline-block;min-width: 60px;margin: 0;" id="username">username</p>
+                    </button>
+                    <ul class="dropdown-menu" style="margin-top: 12px;margin-left: -50px;" aria-labelledby="userMenu">
+                        <li><a>
+                            <sapn class="fa fa-gear" style="color: #2980ff;padding-right: 8px;"></sapn>
+                            个人设置</a></li>
+                        <li><a href="/user/setpassword?formpathname=/cloud">
+                            <sapn class="fa fa-key" style="color: #2980ff;padding-right: 6px;"></sapn>
+                            更改密码</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/user/logout">
+                            <sapn class="fa fa-external-link" style="color: #2980ff;padding-right: 6px;"></sapn>
+                            退出登录</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="file_path">
+            <div id="file_path_reply" style="">
+                <a class="reply-a" id="btnReverse">
+                    <sapn class="fa fa-reply"></sapn>
+                </a>
+            </div>
+            <div id="file_path_inner"></div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="display: none;"
+         id="main_right_share_nav">
+        <div>
+            <button class="btn btn-default" style="color: #2980ff" type="button" id="btnNewShare">
+                <sapn class="fa fa-plus"></sapn>
+                新建
+            </button>
+            <button class="btn btn-default" style="color: #2980ff" type="button" id="btnDelShare">
+                删除分享
+            </button>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="main_right_content">
+    </div>
+</div>
+<div class="modal fade" id="uploadModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="modalHide();" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">上传文件</h4>
+            </div>
+            <div class="modal-body">
+                <form id="uploadForm">
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">文件名</span>
+                        <input class="form-control" type="text" maxlength="255" name="filename" id="filename"
+                               placeholder="请输入文件名">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <label class="input-group-addon" for="inputfile">文件输入</label>
+                        <input class="form-control" type="file" name="inputfile" id="inputfile">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="modalHide();">关闭</button>
+                <button type="button" class="btn btn-primary" id="btnUploadSubmit">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="setFolderInfoModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="modalHide();" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">新建文件夹</h4>
+            </div>
+            <div class="modal-body">
+                <br>
+                <div class="input-group">
+                    <span class="input-group-addon">文件夹名</span>
+                    <input class="form-control" type="text" maxlength="64" id="foldername" placeholder="请输入文件夹名">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="modalHide();">关闭</button>
+                <button type="button" class="btn btn-primary" id="btnNewFolderSubmit">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="showInfoModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="modalHide();" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">文件详情</h4>
+            </div>
+            <div class="modal-body">
+                <table style="width: 100%; margin: 10px;" id="file_info">
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="modalHide();">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
