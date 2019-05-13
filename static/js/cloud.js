@@ -132,7 +132,7 @@ $(document).ready(function () {
     });
 
     //更多操作下拉菜单中  重命名按钮  单击
-    $("#other_menu_setFileName").click(function () {
+    $("#other_menu_set_name").click(function () {
         if ($(".file-opt").length === 1) {
             var fId = $(".file-opt").children("[name='fId']").val();
             var fName = prompt("请输入文件（夹）名称：");
