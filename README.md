@@ -25,10 +25,12 @@ _中文_
    连接其他数据库如SQL server还需要更改./MyWebSite/\_\_init\_\_.py下的数据库模块引用。
 4. 创建数据表：  
    执行`python manage.py makemigrations`命令生成迁移；  
-   执行`python manage.py migrate`命令执行迁移（创建数据表）；  
+   执行`python manage.py migrate`命令执行迁移（创建数据表）；
+5. 生成初始数据：  
+   执行create_init_data.sql中的sql语句；
 6. 运行：  
    执行`python manage.py runserver 0:8000`命名运行项目（0为0.0.0.0的简写，端口8000）。
-7. 浏览器url栏输入localhost:8000即可访问。
+7. 访问：浏览器url栏输入localhost:8000即可访问。
 
 [Ubuntu apache2下部署本项目](https://www.chenjianxiong.cn/index.php/2018/11/13/ubuntu16_04_apache2_bu_shu_django2_xiang_mu/)
 

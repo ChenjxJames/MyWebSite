@@ -7,7 +7,7 @@ class FileInfo(models.Model):
     """
     文件信息模型类（文件编号， 文件名， 文件所在父文件夹编号， 是否为文件夹， 文件上传时间， 文件（路径），文件后缀，文件md5码， 文件所属的用户编号）
     """
-    def user_directory_path(self):
+    def user_directory_path(self, *args, **kwargs):
         return 'cloud_files/user_{0}/{1}/{2}'.format(self.fUserId,
                                                      time.strftime('%Y/%m/%d', time.localtime(time.time())), self.fId)
 

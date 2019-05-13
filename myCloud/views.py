@@ -42,14 +42,16 @@ def get_file_list(request):
                 jsonStr = [{'state': '0', 'info': '检索成功!'}, data]
             elif models.FileInfo.objects.filter(fId=fId, fUserId=user_id):
                 jsonStr = [{'state': '1', 'info': '文件夹为空!'}]
-            elif fId == user_id:
+            elif fId == 0:
                 jsonStr = [{'state': '1', 'info': '您还没有上传过文件!'}]
             else:
                 jsonStr = [{'state': '-2', 'info': '文件检索错误!'}]
         except ValueError as err:
-            jsonStr = [{'state': '-1', 'info': '参数错误!', 'error': err}]
+            print(err)
+            jsonStr = [{'state': '-1', 'info': '参数错误!'}]
         except Exception as err:
-            jsonStr = [{'state': '-3', 'info': '服务器错误!', 'error': err}]
+            print(err)
+            jsonStr = [{'state': '-3', 'info': '服务器错误!'}]
         finally:
             return JsonResponse(jsonStr, safe=False)
 
@@ -59,37 +61,38 @@ def get_file_list(request):
 @is_login
 def upload(request):
     if request.method == "POST":
-        try:
-            fileInfo = models.FileInfo()
-            fileInfo.fName = request.POST.get('filename', None)
-            fileInfo.fFolderId = request.POST.get('fFolderId', None)
-            fileInfo.fIsFolder = bool(request.POST.get('fIsFolder', None))
-            fileInfo.fUserId = get_userid(request)
-            fId = time.strftime('%Y%m%d', time.localtime(time.time())) + "00"
-            while True:
-                if len(models.FileInfo.objects.filter(fId=fId)) == 0:
-                    break
-                fId = str(int(fId) + 1)
-            fileInfo.fId = fId
-            # 判断该目录下是否有同名文件（允许一个文件夹和一个文件同名）
-            if models.FileInfo.objects.filter(fName=fileInfo.fName,
-                                              fFolderId=fileInfo.fFolderId,
-                                              fIsFolder=fileInfo.fIsFolder,
-                                              fUserId=fileInfo.fUserId):
-                jsonStr = {'state': '-2', 'info': '文件上传失败，有同名文件！'}
-            else:
-                if not fileInfo.fIsFolder:  # 对于文件，需要上传文件本身，提取文件后缀，计算文件md5码
-                    fileInfo.fFile = request.FILES.get('inputfile', None)
-                    fileInfo.fExtension = fileInfo.fFile.name.split('.')[-1].lower()  # 获取文件后缀
-                    fileInfo.save()
-                    filePath = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                                            'upload/',
-                                            fileInfo.fFile.url)
-                    fileInfo.fmd5 = MD5.get_file_md5(filePath)
+        # try:
+        fileInfo = models.FileInfo()
+        fileInfo.fName = request.POST.get('filename', None)
+        fileInfo.fFolderId = request.POST.get('fFolderId', None)
+        fileInfo.fIsFolder = bool(request.POST.get('fIsFolder', None))
+        fileInfo.fUserId = get_userid(request)
+        fId = time.strftime('%Y%m%d', time.localtime(time.time())) + "00"
+        while True:
+            if len(models.FileInfo.objects.filter(fId=fId)) == 0:
+                break
+            fId = str(int(fId) + 1)
+        fileInfo.fId = fId
+        # 判断该目录下是否有同名文件（允许一个文件夹和一个文件同名）
+        if models.FileInfo.objects.filter(fName=fileInfo.fName,
+                                          fFolderId=fileInfo.fFolderId,
+                                          fIsFolder=fileInfo.fIsFolder,
+                                          fUserId=fileInfo.fUserId):
+            jsonStr = {'state': '-2', 'info': '文件上传失败，有同名文件！'}
+        else:
+            if not fileInfo.fIsFolder:  # 对于文件，需要上传文件本身，提取文件后缀，计算文件md5码
+                fileInfo.fFile = request.FILES.get('inputfile', None)
+                fileInfo.fExtension = fileInfo.fFile.name.split('.')[-1].lower()  # 获取文件后缀
                 fileInfo.save()
-                jsonStr = {'state': '0', 'info': '文件上传成功'}
-        except Exception as err:
-            jsonStr = {'state': '-4', 'info': '服务器错误!', 'error': err}
+                filePath = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                        'upload/',
+                                        fileInfo.fFile.url)
+                fileInfo.fmd5 = MD5.get_file_md5(filePath)
+            fileInfo.save()
+            jsonStr = {'state': '0', 'info': '文件上传成功'}
+        # except Exception as err:
+            # print(err)
+            # jsonStr = {'state': '-4', 'info': '服务器错误!'}
         return JsonResponse(jsonStr, safe=False)
 
 
@@ -117,7 +120,8 @@ def download(request):
             else:
                 jsonStr = {'state': '-1', 'info': '参数错误！'}
         except Exception as err:
-            jsonStr = {'state': '-4', 'info': '服务器错误！', 'error': err}
+            print(err)
+            jsonStr = {'state': '-4', 'info': '服务器错误！'}
 
         return JsonResponse(jsonStr, safe=False)
 
@@ -151,7 +155,8 @@ def del_file(request):
             else:
                 jsonStr = {'state': '-2', 'info': '您没有访问该文件的权限！'}
         except Exception as err:
-            jsonStr = {'state': '-4', 'info': '服务器错误！', 'error': err}
+            print(err)
+            jsonStr = {'state': '-4', 'info': '服务器错误！'}
 
         return JsonResponse(jsonStr, safe=False)
 
@@ -175,7 +180,8 @@ def set_file_name(request):
             else:
                 jsonStr = {'state': '-1', 'info': '参数错误！'}
         except Exception as err:
-            jsonStr = {'state': '-4', 'info': '服务器错误！', 'error': err}
+            print(err)
+            jsonStr = {'state': '-4', 'info': '服务器错误！'}
 
         return JsonResponse(jsonStr, safe=False)
 
@@ -185,17 +191,16 @@ def set_file_name(request):
 @is_login
 def move_file(request):
     if request.method == "POST":
-        fFolderId = request.POST.get('fFolderId', None)
+        fFolderId = int(request.POST.get('fFolderId', None))
         fIdList = request.POST.getlist('fIdList', None)
-        if models.FileInfo.objects.filter(fId=fFolderId) and len(fIdList):  # 检索文件夹信息（判断该文件夹是否存在）
+        if (models.FileInfo.objects.filter(fId=fFolderId) or fFolderId == 0) and len(fIdList):  # 检索文件夹信息（判断该文件夹是否存在）
             count = 0
             for fId in fIdList:
-                if models.FileInfo.objects.filter(fId=fId):  # 检索文件信息（判断该文件是否存在）
-                    obj = models.FileInfo.objects.get(fId=fId)
-                    if obj.fUserId == get_userid(request):  # 判断文件是否属于该用户
-                        obj.fFolderId = fFolderId
-                        obj.save()
-                        count += 1
+                obj = models.FileInfo.objects.get(fId=fId)  # 检索文件信息
+                if obj.fUserId == get_userid(request):  # 判断文件是否属于该用户
+                    obj.fFolderId = fFolderId
+                    obj.save()
+                    count += 1
             if count == len(fIdList):
                 jsonStr = {'state': '0', 'info': '文件移动成功！'}
             elif count > 0:
@@ -230,7 +235,8 @@ def get_info(request):
             else:
                 jsonStr = {'state': '-2', 'info': '您没有访问该文件的权限！'}
         except Exception as err:
-            jsonStr = {'state': '-1', 'info': '参数错误！', 'error': err}
+            print(err)
+            jsonStr = {'state': '-1', 'info': '参数错误！'}
 
         return JsonResponse(jsonStr, safe=False)
 

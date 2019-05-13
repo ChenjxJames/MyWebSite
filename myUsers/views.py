@@ -87,7 +87,8 @@ def register(request):
             else:
                 jsonStr = {'state': '-3', 'info': '注册失败，请输入邀请码!'}
         except Exception as err:
-            jsonStr = {'state': '-4', 'info': '服务器错误，请联系管理员!', 'error': err}
+            print(err)
+            jsonStr = {'state': '-4', 'info': '服务器错误，请联系管理员!'}
         return JsonResponse(jsonStr, safe=False)
 
     else:
@@ -108,7 +109,8 @@ def set_password(request):
             else:
                 jsonStr = {'state': '-1', 'info': '密码错误！'}
         except Exception as err:
-            jsonStr = {'state': '-4', 'info': '服务器错误，请联系管理员!', 'error': err}
+            print(err)
+            jsonStr = {'state': '-4', 'info': '服务器错误，请联系管理员!'}
         return JsonResponse(jsonStr, safe=False)
     else:
         return render(request, 'myUsers/change_password.html')
@@ -142,14 +144,10 @@ def get_userid(request):
 # 判断用户是否登录的函数修饰器（未登录则重定向登录页面，登陆后返回；登录则直接运行函数）
 def is_login(fn):
     def inner(request, *args, **kwargs):
-        try:
-            if 'username' in request.session and models.UserInfo.objects.get(uLoginName=get_username(request)).uEnabled:
-                return fn(request, *args, **kwargs)
-            else:
-                # 如果用户未登录，301重定向到登录界面
-                return login(request)
-        except Exception as err:
-            print(err)
+        if 'username' in request.session and models.UserInfo.objects.get(uLoginName=get_username(request)).uEnabled:
+            return fn(request, *args, **kwargs)
+        else:
+            # 如果用户未登录，301重定向到登录界面
             return login(request)
 
     return inner
