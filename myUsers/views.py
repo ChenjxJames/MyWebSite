@@ -27,13 +27,13 @@ def login(request):
                 # 保持登录一个月
                 if keep_login:
                     request.session.set_expiry(30 * 24 * 60 * 60)
-                jsonStr = {'state': '0', 'info': '登录成功！'}
+                result = {'state': '0', 'info': '登录成功！'}
             else:
-                jsonStr = {'state': '-1', 'info': '登录失败，用户名或密码错误！'}
+                result = {'state': '-111', 'info': '登录失败，用户名或密码错误！'}
         except Exception as err:
             print(err)
-            jsonStr = {'state': '-2', 'info': '登录失败，用户名或密码错误！'}
-        return JsonResponse(jsonStr, safe=False)
+            result = {'state': '-112', 'info': '登录失败，用户名或密码错误！'}
+        return JsonResponse(result, safe=False)
 
     else:
         # 检查是否有session保持登录
@@ -69,7 +69,7 @@ def register(request):
         email = request.POST.get('email', '')
         try:
             if models.UserInfo.objects.filter(uLoginName=username):
-                jsonStr = {'state': '-1', 'info': '该用户名已有人使用！'}
+                result = {'state': '-121', 'info': '该用户名已有人使用！'}
             elif models.RegisterKeyInfo.objects.filter(rId=registerkey):
                 registerKeyObj = models.RegisterKeyInfo.objects.get(rId=registerkey)
                 registerKeyObj.delete()
@@ -81,15 +81,15 @@ def register(request):
 
                 if models.UserInfo.objects.create(uId=u_id, uLoginName=username, uPassword=MD5.get_str_md5(password),
                                                   uName=name, uEmail=email, uAuthorization=0, uEnabled=True):
-                    jsonStr = {'state': '0', 'info': '注册成功!'}
+                    result = {'state': '0', 'info': '注册成功!'}
                 else:
-                    jsonStr = {'state': '-2', 'info': '注册失败，请联系管理员!'}
+                    result = {'state': '-122', 'info': '注册失败，请联系管理员!'}
             else:
-                jsonStr = {'state': '-3', 'info': '注册失败，请输入邀请码!'}
+                result = {'state': '-123', 'info': '注册失败，请输入正确的邀请码!'}
         except Exception as err:
             print(err)
-            jsonStr = {'state': '-4', 'info': '服务器错误，请联系管理员!'}
-        return JsonResponse(jsonStr, safe=False)
+            result = {'state': '-4', 'info': '服务器错误，请联系管理员!'}
+        return JsonResponse(result, safe=False)
 
     else:
         return render(request, 'myUsers/register.html')
@@ -105,13 +105,13 @@ def set_password(request):
             if userObj.uPassword == MD5.get_str_md5(password) and userObj.uEnabled:
                 userObj.uPassword = MD5.get_str_md5(newpassword)
                 userObj.save()
-                jsonStr = {'state': '0', 'info': '密码更改成功！'}
+                result = {'state': '0', 'info': '密码更改成功！'}
             else:
-                jsonStr = {'state': '-1', 'info': '密码错误！'}
+                result = {'state': '-131', 'info': '旧密码输入错误！'}
         except Exception as err:
             print(err)
-            jsonStr = {'state': '-4', 'info': '服务器错误，请联系管理员!'}
-        return JsonResponse(jsonStr, safe=False)
+            result = {'state': '-4', 'info': '服务器错误，请联系管理员!'}
+        return JsonResponse(result, safe=False)
     else:
         return render(request, 'myUsers/change_password.html')
 
@@ -125,8 +125,8 @@ def increase_user_login_info(request):
 
 # 获取用户信息（返回request的用户名及ID，json格式）
 def get_user_info(request):
-    jsonStr = {'username': get_username(request), 'userId': get_userid(request)}
-    return JsonResponse(jsonStr, safe=False)
+    result = {'username': get_username(request), 'userId': get_userid(request)}
+    return JsonResponse(result, safe=False)
 
 
 # 获取用户名（返回request的用户名）
