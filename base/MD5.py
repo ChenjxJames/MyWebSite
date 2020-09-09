@@ -4,18 +4,25 @@ import os
 SALT = "G0rOgF7z"  # 盐值用于字符串md5加密时插入
 
 
-def get_str_md5(str):
+def str_add_salt_md5(str):
     """
+    :param str:
+    :return: md5(str + SALT)
+    """
+    return str_md5(str + SALT)
 
+
+def str_md5(str):
+    """
     :param str:
     :return: md5(str + SALT)
     """
     md5_obj = hashlib.md5()
-    md5_obj.update((str + SALT).encode('utf-8'))
+    md5_obj.update(str.encode('utf-8'))
     return md5_obj.hexdigest()
 
 
-def get_file_md5(filepath):
+def file_md5(filepath):
     if os.path.isfile(filepath):
         md5_obj = hashlib.md5()
         f = open(filepath, 'rb')
@@ -29,6 +36,5 @@ def get_file_md5(filepath):
 
 
 if __name__ == '__main__':
-    print(get_str_md5("md5test"))
+    print(str_add_salt_md5("md5test"))
     # print(fileMD5('D:\\test.txt'))
-

@@ -18,7 +18,7 @@ def login(request):
         keep_login = bool(request.POST.get('keeplogin', False))
         try:
             userObj = models.UserInfo.objects.get(uLoginName=username)
-            if userObj.uPassword == MD5.get_str_md5(password) and userObj.uEnabled:
+            if userObj.uPassword == MD5.str_add_salt_md5(password) and userObj.uEnabled:
                 request.session['userid'] = models.UserInfo.objects.get(uLoginName=username).uId
                 request.session['username'] = username
                 request.session['password'] = password
@@ -42,7 +42,7 @@ def login(request):
             password = request.session['password']
             try:
                 userObj = models.UserInfo.objects.get(uLoginName=username)
-                if userObj.uPassword == MD5.get_str_md5(password) and userObj.uEnabled:
+                if userObj.uPassword == MD5.str_add_salt_md5(password) and userObj.uEnabled:
                     increase_user_login_info(request)
                     return HttpResponseRedirect('/')
             except Exception as err:
@@ -79,7 +79,7 @@ def register(request):
                         break
                     u_id = str(int(u_id) + 1)
 
-                if models.UserInfo.objects.create(uId=u_id, uLoginName=username, uPassword=MD5.get_str_md5(password),
+                if models.UserInfo.objects.create(uId=u_id, uLoginName=username, uPassword=MD5.str_add_salt_md5(password),
                                                   uName=name, uEmail=email, uAuthorization=0, uEnabled=True):
                     result = {'state': '0', 'info': '注册成功!'}
                 else:
@@ -102,8 +102,8 @@ def set_password(request):
         newpassword = request.POST.get('newPassword', None)  # 后端再次md5加密
         try:
             userObj = models.UserInfo.objects.get(uLoginName=username)
-            if userObj.uPassword == MD5.get_str_md5(password) and userObj.uEnabled:
-                userObj.uPassword = MD5.get_str_md5(newpassword)
+            if userObj.uPassword == MD5.str_add_salt_md5(password) and userObj.uEnabled:
+                userObj.uPassword = MD5.str_add_salt_md5(newpassword)
                 userObj.save()
                 result = {'state': '0', 'info': '密码更改成功！'}
             else:

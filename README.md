@@ -32,7 +32,8 @@ _中文_
    执行`python manage.py runserver 0:8000`命名运行项目（0为0.0.0.0的简写，端口8000）。
 7. 访问：浏览器url栏输入localhost:8000即可访问。
 
-[Ubuntu apache2下部署本项目](https://www.chenjianxiong.cn/index.php/2018/11/13/ubuntu16_04_apache2_bu_shu_django2_xiang_mu/)
+[Ubuntu apache2下部署本项目](https://www.chenjianxiong.cn/index.php/2018/11/13/ubuntu16_04_apache2_bu_shu_django2_xiang_mu/)  
+[Java SpringBoot重构项目](https://github.com/ChenjxJames/MyCloud)
 
 
 

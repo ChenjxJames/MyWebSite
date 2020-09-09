@@ -29,3 +29,14 @@ class FileTypeInfo(models.Model):
     """
     fExtension = models.CharField(max_length=10, null=False, verbose_name='文件后缀', primary_key=True)
     fType = models.CharField(max_length=16, null=False, verbose_name='文件类型')
+    
+
+class FileShareInfo(models.Model):
+    """
+    文件分享模型类（分享编号，文件编号，访问密钥，分享创建时间戳，分享截止时间戳）
+    """
+    fShareId = models.CharField(max_length=10, null=False, verbose_name='文件分享编号', primary_key=True)
+    fId = models.CharField(max_length=10, null=False, verbose_name='文件编号')
+    fKey = models.CharField(max_length=32, null=False, verbose_name='访问密钥')
+    fTimestamp = models.DateTimeField(auto_now_add=True, null=False, verbose_name='分享创建时间戳')
+    fDeadline = models.DateTimeField(null=False, verbose_name='分享截止时间')

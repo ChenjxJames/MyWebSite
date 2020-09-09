@@ -22,12 +22,13 @@ $(document).ready(function () {
     $(document).keydown(function (event) {
         //ctrl+A
         if (event.ctrlKey && event.which === 65) {
-            if ($(".file-opt").length === $(".file-item").length) {
-                $(".file-item").each(function () {
+            var fileItems = $(".file-item");
+            if ($(".file-opt").length === fileItems.length) {
+               fileItems.each(function () {
                     $(this).removeClass('file-opt');
                 });
             } else {
-                $(".file-item").each(function () {
+                fileItems.each(function () {
                     $(this).addClass('file-opt');
                 });
             }
@@ -329,7 +330,7 @@ $(document).ready(function () {
         var url = "/cloud/download";
         var form = $("<form>");
         form.attr("style", "display:none");
-        form.attr("id", "download_file_form_"+fId);
+        form.attr("id", "download_file_form_" + fId);
         form.attr("method", "get");
         form.attr("action", url);
         $("body").append(form);
@@ -477,7 +478,7 @@ $(document).ready(function () {
         $("#loading").show();
         $.ajax({
             url: "/user/getuserinfo",
-            data:{},
+            data: {},
             dataType: "json",
             async: true,
             success: function (data) {
@@ -492,7 +493,7 @@ $(document).ready(function () {
 
     //构建文件夹对象
     function newFloder(id, name) {
-        var folder = new Object();
+        var folder = {};
         folder.id = id;
         folder.name = name;
         return folder

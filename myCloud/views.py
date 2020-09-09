@@ -84,7 +84,7 @@ def upload(request):
                     filePath = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                                             'upload/',
                                             fileInfo.fFile.url)
-                    fileInfo.fmd5 = MD5.get_file_md5(filePath)
+                    fileInfo.fmd5 = MD5.file_md5(filePath)
                 fileInfo.save()
                 result = {'state': '0', 'info': '文件上传成功'}
         except Exception as err:
@@ -232,6 +232,37 @@ def get_info(request):
             print(err)
             result = {'state': '-4', 'info': '服务器错误！'}
 
+        return JsonResponse(result, safe=False)
+
+
+# 新建文件分享
+# 通过函数修饰器限定用户必须登录访问
+@is_login
+def create_share(request):
+    if request.method == "POST":
+        fKey = request.POST.get('key')
+        fId = request.POST.get('fId')
+        fDeadline = request.POST.get('deadline')
+        try:
+            print(fId, fKey, fDeadline)
+            if models.FileInfo.objects.get(fId=fId).fUserId == get_userid(request):
+                fShareId = time.strftime('%Y%m%d', time.localtime(time.time())) + "00"
+                while True:
+                    if len(models.FileShareInfo.objects.filter(fShareId=fShareId)) == 0:
+                        break
+                    fShareId = str(int(fShareId) + 1)
+                models.FileShareInfo.objects.create(fShareId=fShareId,
+                                                    fId=fId,
+                                                    fKey=MD5.str_add_salt_md5(fKey),
+                                                    fDeadline=fDeadline)
+                result = {'state': '0', 'info': '文件分享成功！'}
+            else:
+                result = {'state': '-221', 'info': '您没有访问该文件的权限！'}
+        except Exception as err:
+            print(err)
+            result = {'state': '-231', 'info': '文件分享失败，请稍后再试！'}
+            if models.FileInfo.objects.filter(fId=fId):
+                result = {'state': '-232', 'info': '文件分享失败，所分享的文件不存在！'}
         return JsonResponse(result, safe=False)
 
 
